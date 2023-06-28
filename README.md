@@ -1,11 +1,6 @@
 <div align=center>
-  <h1><a href="https://github.com/emuel-vassallo" />Emuel</a>'s dotfiles</h1>
-  <p>⚙️ My personal dotfiles for BSPWM, Neovim, Kitty, Zsh, etc.</p>
-  <p>
-    <a href="https://github.com/emuel-vassallo/dotfiles/stargazers"><img src="https://img.shields.io/github/stars/emuel-vassallo/dotfiles?colorA=151515&colorB=8C977D&style=for-the-badge"></a>
-    <a href="https://github.com/emuel-vassallo/dotfiles/issues"><img src="https://img.shields.io/github/issues/emuel-vassallo/dotfiles?colorA=151515&colorB=B66467&style=for-the-badge"></a>
-    <a href="https://github.com/emuel-vassallo/dotfiles/network/members"><img src="https://img.shields.io/github/forks/emuel-vassallo/dotfiles?colorA=151515&colorB=8DA3B9&style=for-the-badge"></a>
-  </p>
+  <h1><a href="https://github.com/wflzao" />Waffle</a>'s dotfiles</h1>
+  <p>⚙️ My personal dotfiles for setting up my PC.</p>
 </div>
 
 ## 🌟 Showcase
