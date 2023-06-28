@@ -17,7 +17,7 @@ case $allowed in
     done
     printf "${cg} [*] Installing NVIDIA drivers\n"
     sudo pacman -S nvidia-settings nvidia-utils lib32-nvidia-utils lib32-opencl-nvidia opencl-nvidia libvdpau libxnvctrl vulkan-icd-loader lib32-vulkan-icd-loader
-    printf "${cb} [*] Installed NVIDIA drivers\n"
+    printf "${cb} [*] NVIDIA drivers installed"
     printf "${cg} [*] Setting up NVIDIA-settings\n"
     mkdir ~/.config/autostart
     sudo tee /etc/xdg/autostart/nvidia-settings.desktop > /dev/null << EOT
@@ -38,13 +38,13 @@ VAL=850
 nvidia-settings -a "DigitalVibrance=\$VAL" > /dev/null
 nvidia-settings --display :0 -a GPUFanControlState=1 -a GPUTargetFanSpeed=75
 EOT
-    printf "${cb} [*] Set up NVIDIA-settings\n"
+    printf "${cb} [*] NVIDIA-settings set up\n"
     printf "${cg} [*] Removing PC speaker\n"
     sudo tee /etc/modprobe.d/nobeep.conf > /dev/null << EOT
 blacklist pcspkr
 EOT
     sudo rmmod pcspkr
-    printf "${cb} [*] Removed PC speaker\n"
+    printf "${cb} [*] PC speaker removed\n"
     printf "${cg} [*] Removing mouse accel\n"
     sudo tee /etc/X11/xorg.conf.d/50-mouse-acceleration.conf > /dev/null << EOT
 Section "InputClass"
@@ -55,10 +55,10 @@ Section "InputClass"
 	Option "AccelSpeed" "0"
 EndSection
 EOT
-    printf "${cb} [*] Removed mouse accel\n"
+    printf "${cb} [*] Mouse accel removed\n"
     printf "${cg} [*] Installing apps\n"
     yay -S kitty rofi ranger polybar gotop sh picom neovim lxappearance flameshot libreoffice feh zsh fd zathura mpd code bitwarden dunst xsettingsd
-    printf "${cb} [*] Installed apps\n"
+    printf "${cb} [*] Apps installed\n"
     printf "${cg} [*] Installing lightDM greeter\n"
     sudo pacman -S lightdm-webkit2-greeter
     sudo pacman -R eos-lightdm-slick-theme
@@ -68,12 +68,13 @@ EOT
     sudo sed -i 's/^greeter-session=.*/greeter-session=lightdm-webkit2-greeter/' /etc/lightdm/lightdm.conf
     sudo sed -i 's/^debug_mode          =.*/debug_mode          = true/' /etc/lightdm/lightdm-webkit2-greeter.conf
     sudo sed -i 's/^webkit_theme	    =.*/webkit_theme	    = glorious/' /etc/lightdm/lightdm-webkit2-greeter.conf
-    printf "${cb} [*] Installed lightDM greeter\n"
+    printf "${cb} [*] LightDM greeter installed\n"
     printf "${cg} [*] Installing cursor theme\n"
     sudo rm /usr/share/icons/default/.
     sudo cp -r cursor/. /usr/share/icons/default
     sudo sed -i 's/^gtk-cursor-theme-name=.*/gtk-cursor-theme-name=default/' ~/.config/gtk-3.0/settings.ini
     sudo sed -i 's/^gtk-cursor-theme-name=.*/gtk-cursor-theme-name=default/' ~/.config/.gtkrc-2.0
+    printf "${cb} [*] Cursor theme installed"
     printf "${cg} [*] Copying Dotfiles\n"
     printf "${cb} [*] Copying Configs\n"
     cp -ra cfg/. ~/.config
