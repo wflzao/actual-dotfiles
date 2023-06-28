@@ -91,7 +91,7 @@ EOT
     printf "${cb} [*] Copying Fonts\n"
     cp -ran fonts/. ~/.fonts
     printf "${cg} [*] Fonts Copied\n"
-    printf "${cb} [*] Setting up git"
+    printf "${cb} [*] Setting up git\n"
     git config --global user.name "wflzao"
     git config --global user.email "wafflemain@protonmail.com"
     git config credential.helper store
