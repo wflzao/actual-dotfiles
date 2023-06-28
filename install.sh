@@ -87,6 +87,12 @@ EOT
     printf "${cb} [*] Copying Fonts\n"
     cp -ran fonts/. ~/.fonts
     printf "${cg} [*] Fonts Copied\n"
+    printf "${cb} [*] Setting up git"
+    git config --global user.name "wflzao"
+    git config --global user.email "wafflemain@protonmail.com"
+    git config credential.helper store
+    git confg --global credential.helper "cache --timeout 7200"
+    printf "${cg} [*] Git set up"
     printf "${cg} [*] Dotfiles Installed\n";;
   *) printf "${cr} [-] Aborting!\n";;
 esac
