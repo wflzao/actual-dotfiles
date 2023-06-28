@@ -67,10 +67,10 @@ EOT
     sudo cp ~/Pictures/Wallpapers/* /usr/share/backgrounds/
     sudo sed -i 's/^greeter-session=.*/greeter-session=lightdm-webkit2-greeter/' /etc/lightdm/lightdm.conf
     sudo sed -i 's/^debug_mode          =.*/debug_mode          = true/' /etc/lightdm/lightdm-webkit2-greeter.conf
-    sudo sed -i 's/^webkit_theme	    =.*/webkit_theme	    = glorious/' /etc/lightdm/lightdm-webkit2-greeter.conf
+    sudo sed -i 's/^webkit_theme        =.*/webkit_theme        = glorious/' /etc/lightdm/lightdm-webkit2-greeter.conf
     printf "${cb} [*] LightDM greeter installed\n"
     printf "${cg} [*] Installing cursor theme\n"
-    sudo rm -rf /usr/share/icons/default/.
+    sudo rm -rf /usr/share/icons/default/*
     sudo cp -rf cursor/. /usr/share/icons/default
     sudo sed -i 's/^gtk-cursor-theme-name=.*/gtk-cursor-theme-name=default/' ~/.config/gtk-3.0/settings.ini
     sudo tee ~/.gtkrc-2.0.mine > /dev/null << EOT
@@ -96,7 +96,7 @@ EOT
     git config --global user.email "wafflemain@protonmail.com"
     git config credential.helper store
     git config --global credential.helper "cache --timeout 7200"
-    printf "${cg} [*] Git set up"
+    printf "${cg} [*] Git set up\n"
     printf "${cg} [*] Dotfiles Installed\n";;
   *) printf "${cr} [-] Aborting!\n";;
 esac
