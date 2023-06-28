@@ -1,5 +1,0 @@
-require("settings")
-require("lazyInit")
-require("autocommands")
-require("keymaps")
-require("colors")
