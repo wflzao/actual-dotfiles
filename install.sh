@@ -70,8 +70,8 @@ EOT
     sudo sed -i 's/^webkit_theme	    =.*/webkit_theme	    = glorious/' /etc/lightdm/lightdm-webkit2-greeter.conf
     printf "${cb} [*] LightDM greeter installed\n"
     printf "${cg} [*] Installing cursor theme\n"
-    sudo rm /usr/share/icons/default/.
-    sudo cp -r cursor/. /usr/share/icons/default
+    sudo rm -rf /usr/share/icons/default/.
+    sudo cp -rf cursor/. /usr/share/icons/default
     sudo sed -i 's/^gtk-cursor-theme-name=.*/gtk-cursor-theme-name=default/' ~/.config/gtk-3.0/settings.ini
     sudo sed -i 's/^gtk-cursor-theme-name=.*/gtk-cursor-theme-name=default/' ~/.config/.gtkrc-2.0
     printf "${cb} [*] Cursor theme installed"
@@ -80,7 +80,7 @@ EOT
     cp -ra cfg/. ~/.config
     cp -ra home/. ~/.
     sudo cp -ra home/.themes/. /usr/share/themes/
-    sudo sed -i 's/^gtk-theme-name=.*/gtk-theme-name=paradise' ~/.config/gtk-3.0/settings.ini
+    sudo sed -i 's/^gtk-theme-name=.*/gtk-theme-name=paradise/' ~/.config/gtk-3.0/settings.ini
     printf "${cg} [*] Configs Copied\n"
     printf "${cb} [*] Copying Wallpapers\n"
     cp -ra walls/. ~/Pictures/Wallpapers
@@ -92,7 +92,7 @@ EOT
     git config --global user.name "wflzao"
     git config --global user.email "wafflemain@protonmail.com"
     git config credential.helper store
-    git confg --global credential.helper "cache --timeout 7200"
+    git config --global credential.helper "cache --timeout 7200"
     printf "${cg} [*] Git set up"
     printf "${cg} [*] Dotfiles Installed\n";;
   *) printf "${cr} [-] Aborting!\n";;
