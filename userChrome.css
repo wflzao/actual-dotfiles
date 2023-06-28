@@ -509,3 +509,7 @@ window,
     --uc-identity-color-purple-muted
   ) !important;
 }
+
+.tabbrowser-tab:not([selected]) .tab-content{
+    color: #404040 !important;
+}
