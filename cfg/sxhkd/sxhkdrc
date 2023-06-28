@@ -14,6 +14,9 @@ super + v
 super + i
   spotify
 
+super + e
+  thunar
+
 Print
  flameshot gui
 
