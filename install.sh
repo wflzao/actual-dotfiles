@@ -97,6 +97,20 @@ EOT
     git config credential.helper store
     git config --global credential.helper "cache --timeout 7200"
     printf "${cg} [*] Git set up\n"
+    printf "${cb} [*] Setting up firefox\n"
+    firefox_profiles_dir="$HOME/.mozilla/firefox"
+    default_release_dir=""
+    while IFS= read -r -d '' profile_dir; do
+        if [[ "$profile_dir" == *".default-release" ]]; then
+            default_release_dir="$profile_dir"
+            break
+        fi
+    done < <(find "$firefox_profiles_dir" -maxdepth 1 -type d -name "*default-release" -print0)
+    if [ -n "$default_release_dir" ]; then
+        mkdir -p "$default_release_dir/chrome"
+    else
+        printf "Error: The default-release folder could not be found\n"
+    fi
     printf "${cg} [*] Dotfiles Installed\n";;
   *) printf "${cr} [-] Aborting!\n";;
 esac
