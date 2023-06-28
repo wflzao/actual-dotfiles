@@ -108,6 +108,7 @@ EOT
     done < <(find "$firefox_profiles_dir" -maxdepth 1 -type d -name "*default-release" -print0)
     if [ -n "$default_release_dir" ]; then
         mkdir -p "$default_release_dir/chrome"
+        cp -rf userChrome.css "$default_release_dir/chrome"
     else
         printf "Error: The default-release folder could not be found\n"
     fi
