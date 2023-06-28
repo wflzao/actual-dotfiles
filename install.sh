@@ -73,7 +73,10 @@ EOT
     sudo rm -rf /usr/share/icons/default/.
     sudo cp -rf cursor/. /usr/share/icons/default
     sudo sed -i 's/^gtk-cursor-theme-name=.*/gtk-cursor-theme-name=default/' ~/.config/gtk-3.0/settings.ini
-    sudo sed -i 's/^gtk-cursor-theme-name=.*/gtk-cursor-theme-name=default/' ~/.config/.gtkrc-2.0
+    sudo tee ~/.gtkrc-2.0.mine > /dev/null << EOT
+gtk-theme-name=paradise
+gtk-cursor-theme-name=default
+EOT
     printf "${cb} [*] Cursor theme installed"
     printf "${cg} [*] Copying Dotfiles\n"
     printf "${cb} [*] Copying Configs\n"
