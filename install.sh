@@ -57,7 +57,7 @@ EndSection
 EOT
     printf "${cb} [*] Mouse accel removed\n"
     printf "${cg} [*] Installing apps\n"
-    yay -S kitty rofi ranger polybar gotop sh picom neovim lxappearance flameshot feh zsh fd zathura mpd code bitwarden dunst xsettingsd pulseaudio zathura-pdf-mupdf
+    yay -S kitty rofi ranger polybar gotop sh picom neovim lxappearance flameshot feh zsh fd zathura mpd codium bitwarden dunst xsettingsd pulseaudio zathura-pdf-mupdf spotify
     printf "${cb} [*] Apps installed\n"
     printf "${cg} [*] Installing lightDM greeter\n"
     sudo pacman -S lightdm-webkit2-greeter
