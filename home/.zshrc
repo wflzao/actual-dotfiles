@@ -3,6 +3,7 @@ export ZDOTDIR=$HOME/.config/zsh
 HISTFILE=~/.zsh_history
 setopt appendhistory
 
+fetch
 # some useful options (man zshoptions)
 setopt autocd extendedglob nomatch menucomplete
 setopt interactive_comments
@@ -47,11 +48,8 @@ zsh_add_plugin "hlissner/zsh-autopair"
 
 # Key-bindings
 bindkey -s '^o' 'ranger^M'
-bindkey -s '^f' 'zi^M'
 bindkey -s '^s' 'ncdu^M'
 bindkey -s '^n' 'nvim^M'
-bindkey -s '^b' 'tmux attach -t default || tmux new -s default^M'
-bindkey -s '^z' 'zi^M'
 bindkey '^[[P' delete-char
 bindkey "^p" up-line-or-beginning-search # Up
 # bindkey "^n" down-line-or-beginning-search # Down
@@ -101,3 +99,90 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 #   eval "$(pyenv virtualenv-init -)"
 # fi
 #
+
+# Aliases
+alias py="python3"
+alias vim="nvim"
+alias cin="cat"
+alias q="exit"
+alias xsel="xsel --clipboard"
+
+# Quick terminal directory actions
+# git
+function qpush() {
+    git add .;
+    git commit -m "$1";
+    git push;
+}
+
+function pullsh() {
+    git pull;
+    qpush $1;
+}
+
+# print file with index $1
+function lsii() {
+	ls | sed -n $1p;
+}
+
+# cd to folder with index $1
+function cdi() {
+	cd "`ls | sed -n $1p`";
+}
+
+# copy $1 to clipboard
+function clip() {
+	echo "$1" | xsel --clipboard;
+}
+
+# yank current directory path
+function yd() {
+	echo "`pwd`" | xsel --clipboard;
+}
+
+# yank the path of the file with index $1
+function yf() {
+    echo "`readlink -f ./`/`ls | sed -n $1p`" | xsel --clipboard
+}
+
+# mpv alias
+# mpv plays a file
+function mpvp() {
+	mpv "`ls | sed -n $1p`";
+}
+
+# mpv plays audio with no display
+function mpva() {
+	mpv "`ls | sed -n $1p`" --no-audio-display;
+}
+
+# mpv plays everything in directory
+function mpvd() {
+        ls | egrep '\.flac$|\.wav$|\.ogg$|\.mka$|\.webm$|\.m4a$|\.mp3$|\.mkv$|>' > ".mpv-pl-list";
+
+        mpv -playlist=".mpv-pl-list";
+        rm ".mpv-pl-list";
+}
+
+# mpv plays everything in directory with no display
+function mpvl() {
+	ls | egrep '\.flac$|\.wav$|\.ogg$|\.mka$|\.webm$|\.m4a$|\.mp3$|\.mkv$|\.mp4$' > ".mpv-pl-list";
+
+	mpv -playlist=".mpv-pl-list" --no-audio-display;
+	rm ".mpv-pl-list";
+}
+
+# recursively plays everything in directory with no display
+function mpvlr() {
+    find . -print | egrep '\.flac$|\.wav$|\.ogg$|\.mka$|\.webm$|\.m4a$|\.mp3$|\.mkv$|\.mp4$' > ".mpv-pl-list";
+
+	mpv -playlist=".mpv-pl-list" --no-audio-display;
+	rm ".mpv-pl-list";
+}
+
+# conversions
+# download via m3u8 link
+function m3u8dl() {
+	ffmpeg -protocol_whitelist file,http,https,tcp,tls,crypto -i "$1" -c copy "$2";
+}
+
