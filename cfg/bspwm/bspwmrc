@@ -5,7 +5,7 @@
 # ------------------
 
 pgrep -x sxhkd > /dev/null || sxhkd &
-feh --bg-scale /home/waffle/Pictures/Wallpapers/3.jpg &
+feh --bg-scale ~/Pictures/Wallpapers/clay-banks-u27Rrbs9Dwc-unsplash.png &
 $HOME/.config/polybar/launch.sh &
 killall -9 -qw picom 2>/dev/null; picom --config ~/.config/picom/picom.conf &>>~/.config/picom/.picom.err &
 killall flameshot &
