@@ -1,0 +1,50 @@
+{
+  "workbench.startupEditor": "none",
+  "telemetry.enableTelemetry": false,
+  "explorer.confirmDelete": false,
+  "editor.formatOnSave": true,
+  "editor.lineHeight": 35,
+  // "editor.lineHeight": 2,
+  "editor.fontLigatures": true,
+  "workbench.editor.untitled.hint": "hidden",
+  "editor.fontSize": 14,
+  "workbench.iconTheme": "file-icons-colourless",
+  "breadcrumbs.enabled": false,
+  "editor.padding.top": 10,
+  "editor.minimap.enabled": false,
+  "workbench.editor.showTabs": false,
+  "vim.useSystemClipboard": true,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.autoDetectColorScheme": true,
+  "workbench.sideBar.location": "right",
+  "editor.codeLens": false,
+  "editor.fontFamily": "Fira Code, JetBrains Mono, Hasklig, 'Courier New', monospace",
+  // "editor.fontFamily": "Fantasque Sans Mono",
+  "explorer.confirmDragAndDrop": false,
+  "editor.cursorBlinking": "phase",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.smoothScrolling": true,
+  "editor.tabSize": 2,
+  "vim.smartRelativeLine": true,
+  "workbench.layoutControl.enabled": false,
+  "editor.inlineSuggest.enabled": true,
+  "workbench.colorTheme": "Paradise",
+  "workbench.colorCustomizations": {
+    "editor.lineHighlightBackground": "#1c1c1c"
+  },
+  "window.menuBarVisibility": "toggle",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1500,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "compressed",
+      "extensionName": ".min.css",
+      "savePath": "/assets/sass/css",
+      "savePathReplacementPairs": null
+    }
+  ],
+  "liveSassCompile.settings.showOutputWindowOn": "None",
+  "security.workspace.trust.enabled": false
+}
