@@ -186,3 +186,13 @@ function m3u8dl() {
 	ffmpeg -protocol_whitelist file,http,https,tcp,tls,crypto -i "$1" -c copy "$2";
 }
 
+# tor
+function torstart() {
+  sudo systemctl enable --now tor.service
+  nohup proxychains firefox & disown
+}
+
+function torquit() {
+  sudo systemctl disable --now tor.service
+  pkill -f firefox
+}

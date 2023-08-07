@@ -60,7 +60,7 @@ super + shift + {e,r}
 	bspc {quit,wm -r}
 
 # lock bspwm
-super + shift + l
+control + shift + l
 	dm-tool lock
 
 # close and kill
