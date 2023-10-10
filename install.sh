@@ -116,6 +116,6 @@ EOT
     git clone https://github.com/Manas140/fetch.git && cd fetch
     ./install.sh i
     printf "${cb} [*] Fetch Installed\n"
-    printf "${cg} [*] Dotfiles installed\n"
+    printf "${cg} [*] Dotfiles installed\n";;
   *) printf "${cr} [-] Aborting!\n";;
 esac
