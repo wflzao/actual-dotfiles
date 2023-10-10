@@ -112,6 +112,10 @@ EOT
     else
         printf "Error: The default-release folder could not be found\n"
     fi
-    printf "${cg} [*] Dotfiles Installed\n";;
+    printf "${cg} [*] Installing fetch\n"
+    git clone https://github.com/Manas140/fetch.git && cd fetch
+    ./install.sh i
+    printf "${cb} [*] Fetch Installed\n"
+    printf "${cg} [*] Dotfiles installed\n"
   *) printf "${cr} [-] Aborting!\n";;
 esac
