@@ -60,6 +60,7 @@ EOT
     yay -S kitty rofi ranger polybar gotop sh picom neovim lxappearance flameshot feh zsh fd zathura mpd codium bitwarden dunst xsettingsd pulseaudio zathura-pdf-mupdf spotify tor proxychains
     printf "${cb} [*] Apps installed\n"
     printf "${cg} [*] Installing lightDM greeter\n"
+    sudo sed -i 's/^#IgnorePkg   =.*/IgnorePkg   = webkit2gtk/' /etc/pacman.conf
     sudo pacman -S lightdm-webkit2-greeter
     sudo pacman -R eos-lightdm-slick-theme
     sudo pacman -R lightdm-slick-greeter
